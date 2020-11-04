@@ -1,0 +1,18 @@
+.front {
+  width: 20%;
+  padding: 20px;
+  float: left;
+}
+
+.form-control.data{
+    padding-left: 20px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-control.data:hover{
+    font-weight:bold;
+    background-color: #E7EBFF;
+    border-color: #2a9fcd;
+    font-style: bold;
+}
