@@ -1,18 +1,44 @@
+.Main {
+  background-color: #f4f4f4;
+  box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.5);
+  width: 1200px;
+  margin-top: 20px;
+  height: 50vh;
+  margin-left: 30px;
+}
+
 .front {
   width: 20%;
   padding: 20px;
   float: left;
 }
 
-.form-control.data{
-    padding-left: 20px;
-    font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
+.form-control.data {
+  padding-left: 20px;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.form-control.data:hover{
-    font-weight:bold;
-    background-color: #E7EBFF;
-    border-color: #2a9fcd;
-    font-style: bold;
+.form-control.data:hover {
+  font-weight: bold;
+  background-color: #e7ebff;
+  border-color: #2a9fcd;
+  font-style: bold;
+  cursor: pointer;
+  outline: "none";
+}
+
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  width: 70%;
+  border-left: none;
+  height: 300px;
+}
+.template {
+  border-bottom: 1px solid #000000;
+  padding-bottom: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  padding-top: 4px;
 }
