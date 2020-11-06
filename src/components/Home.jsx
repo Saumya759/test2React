@@ -5,6 +5,7 @@ import Data from "./Data";
 import Weather from "./Weather";
 import contacts from "../data.json";
 import Graph from "./Graph";
+import Weathers from "./Weathers";
 
 const Home = () => {
   const [isDisabled1, disableTabs1] = useState(false);
@@ -44,8 +45,8 @@ const Home = () => {
         </div>
 
         {isDisabled1 && (
-          <div class="tabcontent">
-            <div class="template">Data Analysis</div>
+          <div className="tabcontent1">
+            <div className="template">Data Analysis</div>
 
             <Table className="table" striped hover>
               <thead>
@@ -70,14 +71,15 @@ const Home = () => {
                 })}
               </tbody>
             </Table>
-            
+            <div>
               <Graph />
-           
+            </div>
           </div>
         )}
         {isDisabled2 && (
-          <div class="tabcontent">
-            <div class="template">Today's weather</div>
+          <div className="tabcontent2">
+            <div className="template">Today's weather</div>
+            <Weathers />
           </div>
         )}
       </div>

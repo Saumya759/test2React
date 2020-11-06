@@ -1,21 +1,28 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
+import "../Styles/Graph.css";
+import value from "../data.json";
+
+const years = [];
+const male = [];
+const female = [];
+value.map((d) => {
+  let y = d.Year;
+  let m = d.Male;
+  let f = d.Female;
+  years.push(y);
+  male.push(parseInt(m));
+  female.push(parseInt(f));
+});
 
 const Graph = () => {
   const data = {
-    labels: ["2007", "2008", "2009", "2010", "2011", "2012", "2013"],
+    labels: years,
     datasets: [
       {
         label: "Female",
-        data: [12, 19, 3, 5, 2, 3],
-        // backgroundColor: [
-        //     'rgba(255, 99, 132, 0.2)',
-        //     'rgba(54, 162, 235, 0.2)',
-        //     'rgba(255, 206, 86, 0.2)',
-        //     'rgba(75, 192, 192, 0.2)',
-        //     'rgba(153, 102, 255, 0.2)',
-        //     'rgba(255, 159, 64, 0.2)'
-        // ],
+        data: female,
+
         borderColor: [
           "rgba(255, 99, 132, 1)",
           "rgba(54, 162, 235, 1)",
@@ -28,7 +35,7 @@ const Graph = () => {
       },
       {
         label: "Male",
-        data: [15, 20, 6, 2, 4, 9],
+        data: male,
         // backgroundColor: [
         //   "rgba(255, 99, 132, 0.2)",
         //   "rgba(54, 162, 235, 0.2)",
@@ -52,9 +59,9 @@ const Graph = () => {
 
   return (
     <>
-      <div>
-        <h5>Birth In Taiwan</h5>
-        <p>Source Ministry of the Interiror</p>
+      <div className="graph">
+        <h5 className="header">Birth In Taiwan</h5>
+        <p className="header">Source Ministry of the Interiror</p>
         <Line data={data} />
       </div>
     </>

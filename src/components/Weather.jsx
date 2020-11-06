@@ -1,15 +1,14 @@
 import React from "react";
-import { Form } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 const Weather = ({ selectTab2 }) => {
   return (
     <>
-      <Form.Control
+      <Button
         type="text"
         className="data"
         value="Today's weather"
-        onClick={selectTab2}
-      />
+        onClick={selectTab2}>Today's weather</Button>
     </>
   );
 };
