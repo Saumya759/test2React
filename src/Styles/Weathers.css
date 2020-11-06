@@ -1,0 +1,9 @@
+.form {
+  padding-top: 20px;
+}
+.box.form-control {
+  border-color: black;
+}
+.font {
+  font-weight: 600;
+}

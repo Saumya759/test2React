@@ -14,13 +14,15 @@
   float: left;
 }
 
-.form-control.data {
-  padding-left: 20px;
+.data.btn.btn-primary {
+  width: 100%;
+  background-color: white;
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
 }
 
-.form-control.data:hover {
+.data.btn.btn-primary:hover {
   font-weight: bold;
   background-color: #e7ebff;
   border-color: #2a9fcd;
@@ -29,13 +31,22 @@
   outline: "none";
 }
 
-.tabcontent {
+.tabcontent1 {
   float: left;
   padding: 0px 12px;
   width: 70%;
   border-left: none;
   height: 300px;
 }
+
+.tabcontent2 {
+  float: left;
+  padding: 0px 12px;
+
+  border-left: none;
+  height: 300px;
+}
+
 .template {
   border-bottom: 1px solid #000000;
   padding-bottom: 4px;
@@ -45,6 +56,8 @@
 }
 .table {
   text-align: center;
+  border: ridge;
+  margin-top: 10px;
 }
 
 .year {
@@ -60,6 +73,6 @@
   color: white;
   background-color: darkgrey;
 }
-.table thead th{
+.table thead th {
   border-top: none !important;
 }
