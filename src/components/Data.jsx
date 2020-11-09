@@ -8,8 +8,10 @@ const Data = ({ selectTab1 }) => {
         type="text"
         className="data"
         value="Data Analysis"
-        onClick={selectTab1}>Data Analysis</Button>
-      
+        onClick={selectTab1}
+      >
+        Data Analysis
+      </Button>
     </>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Form, Row, Col } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import "../Styles/Weathers.css";
 import DisplayWeather from "./DisplayWeather";
 
@@ -8,19 +9,27 @@ const Weathers = () => {
   const [alldata, setAllData] = useState([]);
   const [form, setForm] = useState({});
 
-  const APIKEY = "64159847d9a7badd874f16035aad4b4d";
-  async function weatherData(e) {
-    // e.preventDefault();
-    if (form.city && form.country) {
-      const data = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${form.city},${form.country}&appid=${APIKEY}`
-      )
-        .then((res) => res.json())
-        .then((data) => data);
+  const dispatch = useDispatch();
+  const state = useSelector((state) => {
+    return state;
+  });
 
-      setWeather({ data: data });
-    }
-  }
+  const GetWeatherstatus = state.GetWeatherstatus;
+  
+
+  // const APIKEY = "64159847d9a7badd874f16035aad4b4d";
+  // async function weatherData(e) {
+  //   // e.preventDefault();
+  //   if (form.city && form.country) {
+  //     const data = await fetch(
+  //       `https://api.openweathermap.org/data/2.5/weather?q=${form.city},${form.country}&appid=${APIKEY}`
+  //     )
+  //       .then((res) => res.json())
+  //       .then((data) => data);
+
+  //     setWeather({ data: data });
+  //   }
+  // }
   useEffect(async () => {
     const data = await fetch(`https://restcountries.eu/rest/v2/all`)
       .then((res) => res.json())

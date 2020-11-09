@@ -5,7 +5,9 @@ const DisplayWeather = (props) => {
   const { data } = props;
   const iconurl =
     "http://openweathermap.org/img/w/" +
-    `${data.cod != 404 ? data.weather[0].icon : null}` +
+    `${
+      data.cod != 404 ? 
+      data.weather[0].icon : null}` +
     ".png";
   return (
     <div className="displayweather">
