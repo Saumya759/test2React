@@ -1,5 +1,6 @@
 .graph {
   border: ridge;
+  width: 100%;
 }
 
 .header {

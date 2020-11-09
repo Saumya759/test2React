@@ -9,7 +9,7 @@ import Weathers from "./Weathers";
 
 const Home = () => {
   const [isDisabled1, disableTabs1] = useState(false);
-  const [isDisabled2, disableTabs2] = useState(false);
+  const [isDisabled2, disableTabs2] = useState(true);
 
   const selectTab1 = () => {
     disableTabs1(!isDisabled1);
