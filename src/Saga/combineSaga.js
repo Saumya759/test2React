@@ -1,11 +1,9 @@
 import { fork, all } from "redux-saga/effects";
-import { GetWeatherRequest} from "./GetWeatherSaga";
+import { GetWeatherRequest } from "./GetWeatherSaga";
 
 function* watchAllSaga() {
   {
-    yield all([
-        fork(GetWeatherRequest),
-    ]);
+    yield all([fork(GetWeatherRequest)]);
   }
 }
 

@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../Styles/DisplayWeather.css";
 
 const DisplayWeather = (props) => {
   const { data } = props;
   const iconurl =
-    "http://openweathermap.org/img/w/" +
+    `${process.env.REACT_APP_WEATHER_URL}img/w/` +
     `${data.cod != 404 ? data.weather[0].icon : null}` +
     ".png";
   return (
@@ -18,7 +18,6 @@ const DisplayWeather = (props) => {
             <span className="cardsubtitle">
               As of {new Date().toLocaleTimeString()}
             </span>
-
             <h1>
               {" "}
               {Math.floor(data.main.temp - 273.15)}
@@ -71,7 +70,6 @@ const DisplayWeather = (props) => {
                 </tr>
               </table>
             </div>
-
             <div className="section2">
               <table>
                 <tr>
