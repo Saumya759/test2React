@@ -11,10 +11,9 @@ export function* GetWeatherSaga(action) {
     let city = action.payload.city;
     let country = action.payload.country;
     let APIKEY = action.payload.APIKEY;
-    console.log(action.payload, "dddddddddddddddddd");
     let response = yield call(
       axios.get,
-      `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${APIKEY}`
+      `${process.env.REACT_APP_WEATHER_URL}data/2.5/weather?q=${city},${country}&appid=${APIKEY}`
     );
     let data = response.data;
     if (data.error === 0) {

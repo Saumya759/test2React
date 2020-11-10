@@ -1,19 +1,41 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Table } from "react-bootstrap";
+import Graph from "./Graph";
+import contacts from "../data.json";
 
-const Data = ({ selectTab1 }) => {
+const Data = () => {
   return (
     <>
-      <Button
-        type="text"
-        className="data"
-        value="Data Analysis"
-        onClick={selectTab1}
-      >
-        Data Analysis
-      </Button>
+      <div className="tabcontent1">
+        <div className="template">Data Analysis</div>
+        <Table className="table" striped hover>
+          <thead>
+            <tr className="head">
+              <td colspan="3">Birth in Taiwan</td>
+            </tr>
+            <tr>
+              <th className="yearhead">Year</th>
+              <th>Male</th>
+              <th>Female</th>
+            </tr>
+          </thead>
+          <tbody>
+            {contacts.map((e) => {
+              return (
+                <tr key={e.id}>
+                  <td className="year">{e.Year}</td>
+                  <td>{e.Male}</td>
+                  <td>{e.Female}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+        <div>
+          <Graph />
+        </div>
+      </div>
     </>
   );
 };
-
 export default Data;

@@ -23,7 +23,6 @@ const Weathers = () => {
     dispatch(GetWeatherRequest(form));
   }, []);
 
-  const APIKEY = "64159847d9a7badd874f16035aad4b4d";
   async function weatherData(e) {
     if (form.city && form.country) {
       state && setWeather({ data: state });
@@ -31,7 +30,7 @@ const Weathers = () => {
     }
   }
   useEffect(async () => {
-    const data = await fetch(`https://restcountries.eu/rest/v2/all`)
+    const data = await fetch(`${process.env.REACT_APP_BASE_URL}rest/v2/all`)
       .then((res) => res.json())
       .then((data) => data);
 
@@ -57,7 +56,6 @@ const Weathers = () => {
       setForm({ ...form, country: value });
     }
   };
-
   return (
     <>
       <Form inline className="form">

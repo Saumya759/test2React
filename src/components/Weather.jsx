@@ -1,16 +1,14 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import Weathers from "./Weathers";
 
-const Weather = ({ selectTab2 }) => {
+const Weather = () => {
   return (
     <>
-      <Button
-        type="text"
-        className="data"
-        value="Today's weather"
-        onClick={selectTab2}>Today's weather</Button>
+      <div className="tabcontent2">
+        <div className="template">Today's weather</div>
+        <Weathers />
+      </div>
     </>
   );
 };
-
 export default Weather;

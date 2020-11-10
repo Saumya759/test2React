@@ -22,7 +22,6 @@ const Graph = () => {
       {
         label: "Female",
         data: female,
-
         borderColor: [
           "rgba(255, 99, 132, 1)",
           "rgba(54, 162, 235, 1)",
@@ -36,7 +35,6 @@ const Graph = () => {
       {
         label: "Male",
         data: male,
-
         borderColor: [
           "rgba(75,192,192,1)",
           "rgba(54, 162, 235, 1)",

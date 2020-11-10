@@ -2,17 +2,17 @@ import * as actions from "../actionTypes/actionTypes";
 const initialstate = {
   isSuccess: false,
   isRequest: false,
-  isError:false
+  isError: false,
 };
 
 const GetWeatherReducer = (state = initialstate, action) => {
   switch (action.type) {
-    case actions.Get_Weather_Request :
+    case actions.Get_Weather_Request:
       return {
         ...state,
         isSuccess: false,
         isRequest: true,
-        isError:false
+        isError: false,
       };
 
     case actions.Get_Weather_Success:
@@ -20,7 +20,7 @@ const GetWeatherReducer = (state = initialstate, action) => {
         ...state,
         isSuccess: true,
         isRequest: false,
-        isError:false,
+        isError: false,
         response: action.payload.response,
       };
 
@@ -29,7 +29,7 @@ const GetWeatherReducer = (state = initialstate, action) => {
         ...state,
         isSuccess: false,
         isRequest: false,
-        isError:true,
+        isError: true,
         error: action.payload.error,
       };
     default:
