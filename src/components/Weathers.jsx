@@ -2,34 +2,34 @@ import React, { useEffect, useState } from "react";
 import { Form, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import "../Styles/Weathers.css";
+import { GetWeatherRequest } from "../Redux/createActions/createActions";
 import DisplayWeather from "./DisplayWeather";
 
 const Weathers = () => {
   const [weather, setWeather] = useState([]);
   const [alldata, setAllData] = useState([]);
-  const [form, setForm] = useState({});
-
-  const dispatch = useDispatch();
-  const state = useSelector((state) => {
-    return state;
+  const [form, setForm] = useState({
+    city: "New Delhi",
+    country: "India",
+    APIKEY: "64159847d9a7badd874f16035aad4b4d",
   });
 
-  const GetWeatherstatus = state.GetWeatherstatus;
-  
+  const dispatch = useDispatch();
+  const state = useSelector(
+    (state) => state.GetWeatherstatus && state.GetWeatherstatus.error
+  );
 
-  // const APIKEY = "64159847d9a7badd874f16035aad4b4d";
-  // async function weatherData(e) {
-  //   // e.preventDefault();
-  //   if (form.city && form.country) {
-  //     const data = await fetch(
-  //       `https://api.openweathermap.org/data/2.5/weather?q=${form.city},${form.country}&appid=${APIKEY}`
-  //     )
-  //       .then((res) => res.json())
-  //       .then((data) => data);
+  useEffect(() => {
+    dispatch(GetWeatherRequest(form));
+  }, []);
 
-  //     setWeather({ data: data });
-  //   }
-  // }
+  const APIKEY = "64159847d9a7badd874f16035aad4b4d";
+  async function weatherData(e) {
+    if (form.city && form.country) {
+      state && setWeather({ data: state });
+      dispatch(GetWeatherRequest(form));
+    }
+  }
   useEffect(async () => {
     const data = await fetch(`https://restcountries.eu/rest/v2/all`)
       .then((res) => res.json())
@@ -56,7 +56,6 @@ const Weathers = () => {
     if (name == "country") {
       setForm({ ...form, country: value });
     }
-    // weatherData()
   };
 
   return (
@@ -72,6 +71,7 @@ const Weathers = () => {
               name="city"
               onChange={(e) => handleChange(e)}
             >
+              <option>New Delhi</option>
               {alldata.map((opt, i) => (
                 <option value={opt.capital}>{opt.capital}</option>
               ))}
@@ -87,6 +87,7 @@ const Weathers = () => {
               onChange={(e) => handleChange(e)}
               onBlur={weatherData}
             >
+              <option>India</option>
               {alldata.map((opt, i) => (
                 <option value={opt.country}>{opt.country}</option>
               ))}
@@ -94,9 +95,9 @@ const Weathers = () => {
           </Col>
         </Row>
       </Form>
-      {weather.data != undefined ? (
+      {state ? (
         <div>
-          <DisplayWeather data={weather.data} />
+          <DisplayWeather data={state} />
         </div>
       ) : null}
     </>
