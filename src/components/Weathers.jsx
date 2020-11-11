@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Form, Row, Col } from "react-bootstrap";
+import { Form, Row, Col, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import "../Styles/Weathers.css";
 import { GetWeatherRequest } from "../Redux/createActions/createActions";
 import DisplayWeather from "./DisplayWeather";
+import { countryapi } from "../services/apiServices";
 
 const Weathers = () => {
   const [weather, setWeather] = useState([]);
@@ -30,7 +31,7 @@ const Weathers = () => {
     }
   }
   useEffect(async () => {
-    const data = await fetch(`${process.env.REACT_APP_BASE_URL}rest/v2/all`)
+    const data = await fetch(`${countryapi}rest/v2/all`)
       .then((res) => res.json())
       .then((data) => data);
 
@@ -97,7 +98,9 @@ const Weathers = () => {
         <div>
           <DisplayWeather data={state} />
         </div>
-      ) : null}
+      ) : (
+        <Spinner className="spin_style" animation="border" />
+      )}
     </>
   );
 };

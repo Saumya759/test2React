@@ -1,10 +1,11 @@
 import React from "react";
 import "../Styles/DisplayWeather.css";
+import { weatherapi } from "../services/apiServices";
 
 const DisplayWeather = (props) => {
   const { data } = props;
   const iconurl =
-    `${process.env.REACT_APP_WEATHER_URL}img/w/` +
+    `${weatherapi}img/w/` +
     `${data.cod != 404 ? data.weather[0].icon : null}` +
     ".png";
   return (
