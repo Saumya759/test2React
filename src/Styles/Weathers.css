@@ -1,0 +1,12 @@
+.form {
+  padding-top: 20px;
+}
+.box.form-control {
+  border-color: black;
+}
+.font {
+  font-weight: 600;
+}
+.spin_style {
+  margin: 30%;
+}
