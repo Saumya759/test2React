@@ -4,6 +4,7 @@ import {
   GetWeatherError,
 } from "../Redux/createActions/createActions";
 import * as actions from "../Redux/actionTypes/actionTypes";
+import {weatherapi} from '../services/apiServices'
 import axios from "axios";
 
 export function* GetWeatherSaga(action) {
@@ -13,7 +14,7 @@ export function* GetWeatherSaga(action) {
     let APIKEY = action.payload.APIKEY;
     let response = yield call(
       axios.get,
-      `${process.env.REACT_APP_WEATHER_URL}data/2.5/weather?q=${city},${country}&appid=${APIKEY}`
+      `${weatherapi}data/2.5/weather?q=${city},${country}&appid=${APIKEY}`
     );
     let data = response.data;
     if (data.error === 0) {
