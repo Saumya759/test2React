@@ -1,0 +1,71 @@
+.Main {
+  background-color: #f4f4f4;
+  box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+  height: 90vh;
+  margin-left: 30px;
+  overflow: auto;
+}
+
+.front {
+  padding: 20px;
+}
+
+.data.btn.btn-primary {
+  width: 100%;
+  background-color: white;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+}
+
+.data.btn.btn-primary:hover {
+  font-weight: bold;
+  background-color: #e7ebff;
+  border-color: #2a9fcd;
+  font-style: bold;
+  cursor: pointer;
+  outline: "none";
+  box-shadow: none;
+}
+
+.tabcontent1 {
+  padding: 0px 12px;
+  border-left: none;
+}
+
+.tabcontent2 {
+  padding: 0px 12px;
+
+  border-left: none;
+}
+
+.template {
+  border-bottom: 1px solid #000000;
+  padding-bottom: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  padding-top: 4px;
+}
+.table {
+  text-align: center;
+  border: ridge;
+  margin-top: 10px;
+}
+
+.year {
+  font-weight: bold;
+}
+
+.head {
+  font-weight: bold;
+  color: white;
+  background-color: darkgrey;
+}
+.yearhead {
+  color: white;
+  background-color: darkgrey;
+}
+.table thead th {
+  border-top: none !important;
+}

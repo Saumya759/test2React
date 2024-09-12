@@ -1,0 +1,9 @@
+.graph {
+  border: ridge;
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  font-family: ui-monospace;
+}
